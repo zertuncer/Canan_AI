@@ -34,7 +34,7 @@ async def chat(request: ChatRequest) -> ChatResponse:
     
     - **message**: Sormak istediğin soru
     - **mode**: 
-        - `gunluk`: Günlük asistan (Canan Hanım)
+        - `gunluk`: Günlük asistan (Canan)
         - `ders`: Ders çalışma modu (Hemşire Hanım, detaylı)
         - `hastane`: Hastane/staj modu (Hemşire Hanım, kısa ve net)
     """
@@ -145,7 +145,7 @@ async def get_modes():
                 "id": "gunluk",
                 "name": "Günlük Asistan",
                 "description": "Samimi sohbet, günlük sorular",
-                "hitap": "Canan Hanım",
+                "hitap": "Canan",
             },
             {
                 "id": "ders",

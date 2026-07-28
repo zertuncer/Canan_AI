@@ -13,7 +13,7 @@ app = FastAPI(
     title="Canan Hemşirelik Asistanı",
     description="""
     Canan için 3 modlu AI asistanı:
-    - **Günlük**: Samimi sohbet asistanı (Canan Hanım)
+    - **Günlük**: Samimi sohbet asistanı (Canan)
     - **Ders Çalışma**: Akademik hemşirelik asistanı (Hemşire Hanım)
     - **Hastane/Staj**: Pratik klinik asistanı (Hemşire Hanım)
     """,
