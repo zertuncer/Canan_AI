@@ -39,7 +39,7 @@ async def chat(request: ChatRequest) -> ChatResponse:
         - `hastane`: Hastane/staj modu (Hemşire Hanım, kısa ve net)
     """
     try:
-        use_rag = request.mode != Mode.DAILY
+        use_rag = request.mode not in (Mode.DAILY, Mode.FAL)
         
         result = await generate_response(
             question=request.message,
@@ -114,7 +114,7 @@ async def chat_multimodal(
         processed_files.append(file_data)
     
     try:
-        use_rag = mode_enum != Mode.DAILY
+        use_rag = mode_enum not in (Mode.DAILY, Mode.FAL)
         
         result = await generate_response(
             question=message,
@@ -158,6 +158,12 @@ async def get_modes():
                 "name": "Hastane / Staj",
                 "description": "Kısa, net, pratik bilgiler",
                 "hitap": "Hemşire Hanım",
+            },
+            {
+                "id": "fal",
+                "name": "Falcı",
+                "description": "Gizemli Kahve Falı Yorumcusu",
+                "hitap": "Canan",
             },
         ]
     }
